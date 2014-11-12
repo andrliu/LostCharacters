@@ -26,6 +26,7 @@
 //MARK: project life cycle
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     self.moc = delegate.managedObjectContext;

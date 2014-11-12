@@ -14,8 +14,8 @@
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property NSManagedObjectContext *moc;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSManagedObjectContext *moc;
 @property NSMutableArray *lostCharactersArray;
 @end
 
@@ -37,6 +37,7 @@
         self.lostCharactersArray = [[Plist lostCharacters] mutableCopy];
         [coreDataManager storeLostCharactersByArray:self.lostCharactersArray];
     }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -47,6 +48,7 @@
     self.lostCharactersArray = [coreDataManager retrieveLostCharacters];
 
     [self.tableView reloadData];
+
 }
 
 //MARK: filter segment control
@@ -100,6 +102,67 @@
     [coreDataManager removeLostCharactersInCoreDataWithArray:self.lostCharactersArray forRowAtIndexPath:indexPath];
 
     [self.tableView reloadData];
+    
+}
+
+//MARK: adda character
+- (IBAction)addLostCharacterOnButtonPressed:(UIBarButtonItem *)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add a character"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    {
+        textField.placeholder = @"Actor";
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    {
+        textField.placeholder = @"Passenger";
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    {
+        textField.placeholder = @"Gender";
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    {
+        textField.placeholder = @"Age";
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    {
+        textField.placeholder = @"Origin";
+    }];
+
+    UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Add"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action)
+                               {
+
+                                   UITextField *textFieldForActor = alert.textFields.firstObject;
+                                   UITextField *textFieldForPassenger = alert.textFields[1];
+                                   UITextField *textFieldForGender = alert.textFields[2];
+                                   UITextField *textFieldForAge = alert.textFields[3];
+                                   UITextField *textFieldForOrigin = alert.textFields.lastObject;
+
+                                   CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
+                                   [coreDataManager storeLostCharactersByActorString:textFieldForActor.text
+                                                                   byPassengerString:textFieldForPassenger.text
+                                                                      byGenderString:textFieldForGender.text
+                                                                         byAgeString:textFieldForAge.text
+                                                                      byOriginString:textFieldForOrigin.text];
+                                   self.lostCharactersArray = [coreDataManager retrieveLostCharacters];
+                                   [self.tableView reloadData];
+                               }];
+
+    [alert addAction:addAction];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
@@ -125,6 +188,11 @@
     cell.ageLabel.text = [NSString stringWithFormat:@"Age:\n%@",[lostCharacter valueForKey:@"age"]];
     cell.originLabel.text = [NSString stringWithFormat:@"Origin:\n%@",[lostCharacter valueForKey:@"origin"]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"segue" sender:self];
 }
 
 @end
