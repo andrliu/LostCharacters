@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>actor</key>
+		<string>Matthew Fox</string>
+		<key>gender</key>
+		<string>Male</string>
+		<key>passenger</key>
+		<string>Jack Shephard</string>
+		<key>origin</key>
+		<string>USA</string>
+		<key>age</key>
+		<string>37</string>
+	</dict>
+	<dict>
+		<key>actor</key>
+		<string>Evangeline Lilly</string>
+		<key>gender</key>
+		<string>Female</string>
+		<key>passenger</key>
+		<string>Kate Austen</string>
+		<key>origin</key>
+		<string>USA</string>
+		<key>age</key>
+		<string>30</string>
+	</dict>
+	<dict>
+		<key>actor</key>
+		<string>Jorge Garcia</string>
+		<key>gender</key>
+		<string>Male</string>
+		<key>passenger</key>
+		<string>Hurley Reyes</string>
+		<key>origin</key>
+		<string>USA</string>
+		<key>age</key>
+		<string>32</string>
+	</dict>
+</array>
+</plist>

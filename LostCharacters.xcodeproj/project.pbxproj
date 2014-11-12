@@ -10,11 +10,16 @@
 		495FC8871A12B19700674A1A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8861A12B19700674A1A /* main.m */; };
 		495FC88A1A12B19700674A1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8891A12B19700674A1A /* AppDelegate.m */; };
 		495FC88D1A12B19700674A1A /* LostCharacters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 495FC88B1A12B19700674A1A /* LostCharacters.xcdatamodeld */; };
-		495FC8901A12B19700674A1A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC88F1A12B19700674A1A /* ViewController.m */; };
+		495FC8901A12B19700674A1A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC88F1A12B19700674A1A /* RootViewController.m */; };
 		495FC8931A12B19700674A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495FC8911A12B19700674A1A /* Main.storyboard */; };
 		495FC8951A12B19700674A1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495FC8941A12B19700674A1A /* Images.xcassets */; };
 		495FC8981A12B19700674A1A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495FC8961A12B19700674A1A /* LaunchScreen.xib */; };
 		495FC8A41A12B19700674A1A /* LostCharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8A31A12B19700674A1A /* LostCharactersTests.m */; };
+		495FC8B61A12C5B700674A1A /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495FC8B51A12C5B700674A1A /* lost.plist */; };
+		495FC8B91A12C81200674A1A /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8B81A12C81200674A1A /* Plist.m */; };
+		495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BB1A12CA9900674A1A /* CoreData.m */; };
+		495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */; };
+		495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +39,23 @@
 		495FC8881A12B19700674A1A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		495FC8891A12B19700674A1A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		495FC88C1A12B19700674A1A /* LostCharacters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LostCharacters.xcdatamodel; sourceTree = "<group>"; };
-		495FC88E1A12B19700674A1A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		495FC88F1A12B19700674A1A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		495FC88E1A12B19700674A1A /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		495FC88F1A12B19700674A1A /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		495FC8921A12B19700674A1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		495FC8941A12B19700674A1A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		495FC8971A12B19700674A1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		495FC89D1A12B19700674A1A /* LostCharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostCharactersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		495FC8A21A12B19700674A1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495FC8A31A12B19700674A1A /* LostCharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostCharactersTests.m; sourceTree = "<group>"; };
+		495FC8B51A12C5B700674A1A /* lost.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lost.plist; sourceTree = "<group>"; };
+		495FC8B71A12C81200674A1A /* Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
+		495FC8B81A12C81200674A1A /* Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
+		495FC8BA1A12CA9900674A1A /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
+		495FC8BB1A12CA9900674A1A /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
+		495FC8BD1A12E97600674A1A /* AddCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCharacterViewController.h; sourceTree = "<group>"; };
+		495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
+		495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostCharacterTableViewCell.h; sourceTree = "<group>"; };
+		495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +99,14 @@
 			children = (
 				495FC8881A12B19700674A1A /* AppDelegate.h */,
 				495FC8891A12B19700674A1A /* AppDelegate.m */,
-				495FC88E1A12B19700674A1A /* ViewController.h */,
-				495FC88F1A12B19700674A1A /* ViewController.m */,
+				495FC88E1A12B19700674A1A /* RootViewController.h */,
+				495FC88F1A12B19700674A1A /* RootViewController.m */,
+				495FC8BD1A12E97600674A1A /* AddCharacterViewController.h */,
+				495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */,
 				495FC8911A12B19700674A1A /* Main.storyboard */,
 				495FC8941A12B19700674A1A /* Images.xcassets */,
 				495FC8961A12B19700674A1A /* LaunchScreen.xib */,
+				495FC8B41A12BFA100674A1A /* Model */,
 				495FC88B1A12B19700674A1A /* LostCharacters.xcdatamodeld */,
 				495FC8841A12B19700674A1A /* Supporting Files */,
 			);
@@ -99,6 +116,7 @@
 		495FC8841A12B19700674A1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				495FC8B51A12C5B700674A1A /* lost.plist */,
 				495FC8851A12B19700674A1A /* Info.plist */,
 				495FC8861A12B19700674A1A /* main.m */,
 			);
@@ -120,6 +138,19 @@
 				495FC8A21A12B19700674A1A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		495FC8B41A12BFA100674A1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */,
+				495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */,
+				495FC8B71A12C81200674A1A /* Plist.h */,
+				495FC8B81A12C81200674A1A /* Plist.m */,
+				495FC8BA1A12CA9900674A1A /* CoreData.h */,
+				495FC8BB1A12CA9900674A1A /* CoreData.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +235,7 @@
 			files = (
 				495FC8931A12B19700674A1A /* Main.storyboard in Resources */,
 				495FC8981A12B19700674A1A /* LaunchScreen.xib in Resources */,
+				495FC8B61A12C5B700674A1A /* lost.plist in Resources */,
 				495FC8951A12B19700674A1A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,9 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				495FC88D1A12B19700674A1A /* LostCharacters.xcdatamodeld in Sources */,
+				495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */,
 				495FC88A1A12B19700674A1A /* AppDelegate.m in Sources */,
-				495FC8901A12B19700674A1A /* ViewController.m in Sources */,
+				495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */,
+				495FC8901A12B19700674A1A /* RootViewController.m in Sources */,
 				495FC8871A12B19700674A1A /* main.m in Sources */,
+				495FC8B91A12C81200674A1A /* Plist.m in Sources */,
+				495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
