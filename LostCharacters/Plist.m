@@ -10,6 +10,7 @@
 
 @implementation Plist
 
+//MARK: input data from plist
 + (NSMutableArray *)lostCharacters
 {
     NSString *bundlePathOfPlist = [[NSBundle mainBundle]pathForResource:@"lost" ofType:@"plist"];

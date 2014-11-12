@@ -13,6 +13,7 @@
 #import "LostCharacterTableViewCell.h"
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property NSManagedObjectContext *moc;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *lostCharactersArray;
@@ -20,6 +21,7 @@
 
 @implementation RootViewController
 
+//MARK: project life cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,8 +39,6 @@
     }
 }
 
-
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -49,23 +49,51 @@
     [self.tableView reloadData];
 }
 
-
-- (IBAction)editOnButtonPressed:(UIBarButtonItem *)sender
+//MARK: filter segment control
+- (IBAction)filterWithGenderBySegmentControl:(UISegmentedControl *)sender
 {
-//    [self.tableView allowsMultipleSelection];
-    if ([sender.title isEqualToString:@"Edit"])
+    if (sender.selectedSegmentIndex == 2)
+    {
+        CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
+        self.lostCharactersArray = [coreDataManager filterLostCharactersByFemale];
+        [self.tableView reloadData];
+    }
+    else if  (sender.selectedSegmentIndex == 1)
+    {
+        CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
+        self.lostCharactersArray = [coreDataManager filterLostCharactersByMale];
+        [self.tableView reloadData];
+    }
+    else
+    {
+        CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
+        self.lostCharactersArray = [coreDataManager retrieveLostCharacters];
+        [self.tableView reloadData];
+    }
+}
+
+//MARK: tableview multiple delete
+- (IBAction)deleteOnButtonPressed:(UIBarButtonItem *)sender
+{
+    if ([sender.title isEqual: @"Edit"])
     {
         self.tableView.editing = YES;
-        sender.title = @"Done";
+        sender.title = @"Delete";
     }
-    else{
+    else
+    {
+        NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
+
+        CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
+        [coreDataManager removeLostCharactersInCoreDataWithArray:self.lostCharactersArray forSelectedRowsAtIndexPaths:selectedRows];
+        
+        [self.tableView reloadData];
         self.tableView.editing = NO;
         sender.title = @"Edit";
     }
 }
 
-
-
+//MARK: tableview single delete
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
@@ -75,19 +103,16 @@
 }
 
 
-
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"SMOKE\nMONSTER";
 }
 
-
-
+//MARK: tableview delegate protocol
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.lostCharactersArray.count;
 }
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

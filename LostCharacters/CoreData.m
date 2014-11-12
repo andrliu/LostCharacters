@@ -17,6 +17,7 @@
     return self;
 }
 
+//MARK: sort and filter data
 - (NSMutableArray *)retrieveLostCharacters
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Lost"];
@@ -27,6 +28,30 @@
     return lostCharactersArray;
 }
 
+
+- (NSMutableArray *)filterLostCharactersByMale
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Lost"];
+    NSSortDescriptor *sortByActorName = [[NSSortDescriptor alloc]initWithKey:@"actor" ascending:YES];
+    request.sortDescriptors = @[sortByActorName];
+    request.predicate = [NSPredicate predicateWithFormat:@"gender = 'Male'"];
+    NSMutableArray *lostCharactersArray = [@[] mutableCopy];
+    lostCharactersArray = [[self.moc executeFetchRequest:request error:nil] mutableCopy];
+    return lostCharactersArray;
+}
+
+- (NSMutableArray *)filterLostCharactersByFemale
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Lost"];
+    NSSortDescriptor *sortByActorName = [[NSSortDescriptor alloc]initWithKey:@"actor" ascending:YES];
+    request.sortDescriptors = @[sortByActorName];
+    request.predicate = [NSPredicate predicateWithFormat:@"gender = 'Female'"];
+    NSMutableArray *lostCharactersArray = [@[] mutableCopy];
+    lostCharactersArray = [[self.moc executeFetchRequest:request error:nil] mutableCopy];
+    return lostCharactersArray;
+}
+
+//MARK: remove data
 - (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *lostCharacter = [lostCharactersArray objectAtIndex:indexPath.row];
@@ -35,6 +60,31 @@
     [self.moc save:nil];
 }
 
+- (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forSelectedRowsAtIndexPaths:(NSArray *)selectedRowsArray
+{
+//        NSMutableIndexSet *indexsOfObjectsToDelete = [NSMutableIndexSet new];
+//        for (NSIndexPath *selectedIndex in selectedRowsArray)
+//        {
+//            [indicesOfItemsToDelete addIndex:selectedIndex.row];
+//        }
+//        [lostCharactersArray removeObjectsAtIndexes:indexsOfObjectsToDelete];
+
+    NSMutableArray *objectsToDelete = [@[]mutableCopy];
+    for (NSIndexPath *selectedIndex in selectedRowsArray)
+    {
+        [objectsToDelete addObject:lostCharactersArray[selectedIndex.row]];
+    }
+
+    for (NSManagedObject *lostCharacter in objectsToDelete)
+    {
+        [self.moc deleteObject:lostCharacter];
+        [lostCharactersArray removeObject:lostCharacter];
+    }
+    [self.moc save:nil];
+}
+
+
+//MARK: store data
 - (void)storeLostCharactersByArray:(NSMutableArray *)lostCharactersArray
 {
     for (NSDictionary *lostCharacterDictionary in lostCharactersArray)

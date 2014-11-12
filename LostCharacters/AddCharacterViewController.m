@@ -17,12 +17,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *originTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *actorImageView;
 
 @end
 
 @implementation AddCharacterViewController
 
-
+//MARK: project life cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,6 +31,7 @@
     self.moc = delegate.managedObjectContext;
 }
 
+//MARK: dismiss keyboard
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.actorTextField resignFirstResponder];
@@ -40,10 +42,12 @@
     return YES;
 }
 
+//MARK: dimiss modal segue
 - (IBAction)backOnButtonPressed:(UIButton *)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (IBAction)confirmOnButtonPressed:(UIButton *)sender
 {

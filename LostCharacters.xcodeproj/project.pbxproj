@@ -20,6 +20,8 @@
 		495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BB1A12CA9900674A1A /* CoreData.m */; };
 		495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */; };
 		495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */; };
+		496DED131A13C19700E250E9 /* LostCharacterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DED121A13C19700E250E9 /* LostCharacterCollectionViewCell.m */; };
+		496DED161A13C21900E250E9 /* ActorImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DED151A13C21900E250E9 /* ActorImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
 		495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostCharacterTableViewCell.h; sourceTree = "<group>"; };
 		495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterTableViewCell.m; sourceTree = "<group>"; };
+		496DED111A13C19700E250E9 /* LostCharacterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostCharacterCollectionViewCell.h; sourceTree = "<group>"; };
+		496DED121A13C19700E250E9 /* LostCharacterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterCollectionViewCell.m; sourceTree = "<group>"; };
+		496DED141A13C21900E250E9 /* ActorImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActorImageViewController.h; sourceTree = "<group>"; };
+		496DED151A13C21900E250E9 /* ActorImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActorImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,16 +103,18 @@
 		495FC8831A12B19700674A1A /* LostCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				495FC8B41A12BFA100674A1A /* Model */,
 				495FC8881A12B19700674A1A /* AppDelegate.h */,
 				495FC8891A12B19700674A1A /* AppDelegate.m */,
 				495FC88E1A12B19700674A1A /* RootViewController.h */,
 				495FC88F1A12B19700674A1A /* RootViewController.m */,
 				495FC8BD1A12E97600674A1A /* AddCharacterViewController.h */,
 				495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */,
+				496DED141A13C21900E250E9 /* ActorImageViewController.h */,
+				496DED151A13C21900E250E9 /* ActorImageViewController.m */,
 				495FC8911A12B19700674A1A /* Main.storyboard */,
 				495FC8941A12B19700674A1A /* Images.xcassets */,
 				495FC8961A12B19700674A1A /* LaunchScreen.xib */,
-				495FC8B41A12BFA100674A1A /* Model */,
 				495FC88B1A12B19700674A1A /* LostCharacters.xcdatamodeld */,
 				495FC8841A12B19700674A1A /* Supporting Files */,
 			);
@@ -145,6 +153,8 @@
 			children = (
 				495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */,
 				495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */,
+				496DED111A13C19700E250E9 /* LostCharacterCollectionViewCell.h */,
+				496DED121A13C19700E250E9 /* LostCharacterCollectionViewCell.m */,
 				495FC8B71A12C81200674A1A /* Plist.h */,
 				495FC8B81A12C81200674A1A /* Plist.m */,
 				495FC8BA1A12CA9900674A1A /* CoreData.h */,
@@ -254,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496DED161A13C21900E250E9 /* ActorImageViewController.m in Sources */,
+				496DED131A13C19700E250E9 /* LostCharacterCollectionViewCell.m in Sources */,
 				495FC88D1A12B19700674A1A /* LostCharacters.xcdatamodeld in Sources */,
 				495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */,
 				495FC88A1A12B19700674A1A /* AppDelegate.m in Sources */,
@@ -452,6 +464,7 @@
 				495FC8A91A12B19700674A1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		495FC8AA1A12B19700674A1A /* Build configuration list for PBXNativeTarget "LostCharactersTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +473,7 @@
 				495FC8AC1A12B19700674A1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

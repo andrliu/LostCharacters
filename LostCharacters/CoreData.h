@@ -17,7 +17,13 @@
 
 - (NSMutableArray *)retrieveLostCharacters;
 
+- (NSMutableArray *)filterLostCharactersByMale;
+
+- (NSMutableArray *)filterLostCharactersByFemale;
+
 - (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forSelectedRowsAtIndexPaths:(NSArray *)selectedRowsArray;
 
 - (void)storeLostCharactersByArray:(NSMutableArray *)lostCharactersArray;
 
