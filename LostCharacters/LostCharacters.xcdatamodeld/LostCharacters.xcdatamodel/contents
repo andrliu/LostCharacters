@@ -6,8 +6,9 @@
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="passenger" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Lost" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Lost" positionX="-54" positionY="-9" width="128" height="135"/>
     </elements>
 </model>

@@ -20,6 +20,7 @@
 		495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BB1A12CA9900674A1A /* CoreData.m */; };
 		495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */; };
 		495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */; };
+		49D44EC61A16F07F0026B9D8 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
 		495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostCharacterTableViewCell.h; sourceTree = "<group>"; };
 		495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterTableViewCell.m; sourceTree = "<group>"; };
+		49D44EC41A16F07F0026B9D8 /* CharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterViewController.h; sourceTree = "<group>"; };
+		49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,17 +100,19 @@
 		495FC8831A12B19700674A1A /* LostCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				495FC8B41A12BFA100674A1A /* Model */,
 				495FC8881A12B19700674A1A /* AppDelegate.h */,
 				495FC8891A12B19700674A1A /* AppDelegate.m */,
 				495FC88E1A12B19700674A1A /* RootViewController.h */,
 				495FC88F1A12B19700674A1A /* RootViewController.m */,
+				49D44EC41A16F07F0026B9D8 /* CharacterViewController.h */,
+				49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */,
 				495FC8BD1A12E97600674A1A /* AddCharacterViewController.h */,
 				495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */,
 				495FC8911A12B19700674A1A /* Main.storyboard */,
 				495FC8941A12B19700674A1A /* Images.xcassets */,
 				495FC8961A12B19700674A1A /* LaunchScreen.xib */,
 				495FC88B1A12B19700674A1A /* LostCharacters.xcdatamodeld */,
+				495FC8B41A12BFA100674A1A /* Model */,
 				495FC8841A12B19700674A1A /* Supporting Files */,
 			);
 			path = LostCharacters;
@@ -143,12 +148,12 @@
 		495FC8B41A12BFA100674A1A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */,
-				495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */,
-				495FC8B71A12C81200674A1A /* Plist.h */,
-				495FC8B81A12C81200674A1A /* Plist.m */,
 				495FC8BA1A12CA9900674A1A /* CoreData.h */,
 				495FC8BB1A12CA9900674A1A /* CoreData.m */,
+				495FC8B71A12C81200674A1A /* Plist.h */,
+				495FC8B81A12C81200674A1A /* Plist.m */,
+				495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */,
+				495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				495FC8901A12B19700674A1A /* RootViewController.m in Sources */,
 				495FC8871A12B19700674A1A /* main.m in Sources */,
 				495FC8B91A12C81200674A1A /* Plist.m in Sources */,
+				49D44EC61A16F07F0026B9D8 /* CharacterViewController.m in Sources */,
 				495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

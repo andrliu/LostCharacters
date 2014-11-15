@@ -28,28 +28,17 @@
     return lostCharactersArray;
 }
 
-
-- (NSMutableArray *)filterLostCharactersByMale
+- (NSMutableArray *)filterLostCharactersByGender:(NSString *)string
 {
     NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Lost"];
     NSSortDescriptor *sortByActorName = [[NSSortDescriptor alloc]initWithKey:@"actor" ascending:YES];
     request.sortDescriptors = @[sortByActorName];
-    request.predicate = [NSPredicate predicateWithFormat:@"gender = 'Male'"];
+    request.predicate = [NSPredicate predicateWithFormat:@"gender = %@", string];
     NSMutableArray *lostCharactersArray = [@[] mutableCopy];
     lostCharactersArray = [[self.moc executeFetchRequest:request error:nil] mutableCopy];
     return lostCharactersArray;
 }
 
-- (NSMutableArray *)filterLostCharactersByFemale
-{
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:@"Lost"];
-    NSSortDescriptor *sortByActorName = [[NSSortDescriptor alloc]initWithKey:@"actor" ascending:YES];
-    request.sortDescriptors = @[sortByActorName];
-    request.predicate = [NSPredicate predicateWithFormat:@"gender = 'Female'"];
-    NSMutableArray *lostCharactersArray = [@[] mutableCopy];
-    lostCharactersArray = [[self.moc executeFetchRequest:request error:nil] mutableCopy];
-    return lostCharactersArray;
-}
 
 //MARK: remove data
 - (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,6 +84,7 @@
         [lostCharacter setValue:lostCharacterDictionary[@"gender"] forKey:@"gender"];
         [lostCharacter setValue:lostCharacterDictionary[@"age"] forKey:@"age"];
         [lostCharacter setValue:lostCharacterDictionary[@"origin"] forKey:@"origin"];
+        
     }
     [self.moc save:nil];
 }

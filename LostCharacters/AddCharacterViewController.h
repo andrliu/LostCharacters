@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface AddCharacterViewController : UIViewController
+
+//@property NSManagedObject *lostCharacter;
 
 @end
