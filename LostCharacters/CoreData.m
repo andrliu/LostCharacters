@@ -44,6 +44,7 @@
 - (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *lostCharacter = [lostCharactersArray objectAtIndex:indexPath.row];
+    
     [self.moc deleteObject:lostCharacter];
     [lostCharactersArray removeObjectAtIndex:indexPath.row];
     [self.moc save:nil];
@@ -84,7 +85,7 @@
         [lostCharacter setValue:lostCharacterDictionary[@"gender"] forKey:@"gender"];
         [lostCharacter setValue:lostCharacterDictionary[@"age"] forKey:@"age"];
         [lostCharacter setValue:lostCharacterDictionary[@"origin"] forKey:@"origin"];
-        
+
     }
     [self.moc save:nil];
 }

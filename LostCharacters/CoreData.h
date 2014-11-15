@@ -27,6 +27,4 @@
 
 - (void)storeLostCharactersByActorString:(NSString *)actorString byPassengerString:(NSString *)passengerString byGenderString:(NSString *)genderString byAgeString:(NSString *)ageString byOriginString:(NSString *)originString;
 
-- (void)updateLostCharactersByActorString:(NSString *)actorString byPassengerString:(NSString *)passengerString byGenderString:(NSString *)genderString byAgeString:(NSString *)ageString byOriginString:(NSString *)originString byImageData:(NSData *)imageData;
-
 @end

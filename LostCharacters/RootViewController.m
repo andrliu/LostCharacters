@@ -12,6 +12,7 @@
 #import "CoreData.h"
 #import "LostCharacterTableViewCell.h"
 #import "CharacterViewController.h"
+#import "RelationshipViewController.h"
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -144,7 +145,6 @@
     {
         textField.placeholder = @"Origin";
     }];
-
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
@@ -185,6 +185,12 @@
     return @"SMOKE\nMONSTER";
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+
+
 //MARK: tableview delegate protocol
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -211,11 +217,22 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
-    CharacterViewController *cvc = segue.destinationViewController;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
-    cvc.lostCharacter = lostCharacter;
+    if ([segue.identifier isEqualToString: @"RelationSegue"])
+    {
+        RelationshipViewController *rvc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
+        rvc.lostCharacter = lostCharacter;
+        rvc.lostCharactersArray = self.lostCharactersArray;
+        
+    }
+    else
+    {
+        CharacterViewController *cvc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
+        cvc.lostCharacter = lostCharacter;
+    }
 
 }
 

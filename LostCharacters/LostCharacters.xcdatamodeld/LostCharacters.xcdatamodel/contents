@@ -7,9 +7,9 @@
         <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="passenger" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" syncable="YES"/>
+        <relationship name="lover" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lost" inverseName="lover" inverseEntity="Lost" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Lost" positionX="-54" positionY="-9" width="128" height="150"/>
+        <element name="Lost" positionX="-54" positionY="-9" width="128" height="148"/>
     </elements>
 </model>

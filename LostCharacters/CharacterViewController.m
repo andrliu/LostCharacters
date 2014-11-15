@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *originTextField;
+@property (weak, nonatomic) IBOutlet UITextField *relationTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property NSManagedObjectContext *moc;
 
@@ -74,12 +75,14 @@
 
 - (IBAction)confirmOnButtonPressed:(UIButton *)sender
 {
+ 
     [self.lostCharacter setValue:self.actorTextField.text forKey:@"actor"];
     [self.lostCharacter setValue:self.passengerTextField.text forKey:@"passenger"];
     [self.lostCharacter setValue:self.ageTextField.text forKey:@"age"];
     [self.lostCharacter setValue:self.genderTextField.text forKey:@"gender"];
     [self.lostCharacter setValue:self.originTextField.text forKey:@"origin"];
     [self.moc save:nil];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

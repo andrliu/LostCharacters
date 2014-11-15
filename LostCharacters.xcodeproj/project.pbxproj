@@ -20,6 +20,7 @@
 		495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BB1A12CA9900674A1A /* CoreData.m */; };
 		495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */; };
 		49D44EC61A16F07F0026B9D8 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */; };
+		49EBCC8C1A17F26B0019582E /* RelationshipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBCC8B1A17F26B0019582E /* RelationshipViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterTableViewCell.m; sourceTree = "<group>"; };
 		49D44EC41A16F07F0026B9D8 /* CharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterViewController.h; sourceTree = "<group>"; };
 		49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterViewController.m; sourceTree = "<group>"; };
+		49EBCC8A1A17F26B0019582E /* RelationshipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationshipViewController.h; sourceTree = "<group>"; };
+		49EBCC8B1A17F26B0019582E /* RelationshipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				495FC88F1A12B19700674A1A /* RootViewController.m */,
 				49D44EC41A16F07F0026B9D8 /* CharacterViewController.h */,
 				49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */,
+				49EBCC8A1A17F26B0019582E /* RelationshipViewController.h */,
+				49EBCC8B1A17F26B0019582E /* RelationshipViewController.m */,
 				495FC8911A12B19700674A1A /* Main.storyboard */,
 				495FC8941A12B19700674A1A /* Images.xcassets */,
 				495FC8961A12B19700674A1A /* LaunchScreen.xib */,
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				495FC88D1A12B19700674A1A /* LostCharacters.xcdatamodeld in Sources */,
+				49EBCC8C1A17F26B0019582E /* RelationshipViewController.m in Sources */,
 				495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */,
 				495FC88A1A12B19700674A1A /* AppDelegate.m in Sources */,
 				495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */,
