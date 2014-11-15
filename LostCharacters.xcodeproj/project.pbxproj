@@ -18,7 +18,6 @@
 		495FC8B61A12C5B700674A1A /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495FC8B51A12C5B700674A1A /* lost.plist */; };
 		495FC8B91A12C81200674A1A /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8B81A12C81200674A1A /* Plist.m */; };
 		495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BB1A12CA9900674A1A /* CoreData.m */; };
-		495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */; };
 		495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */; };
 		49D44EC61A16F07F0026B9D8 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */; };
 /* End PBXBuildFile section */
@@ -53,8 +52,6 @@
 		495FC8B81A12C81200674A1A /* Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
 		495FC8BA1A12CA9900674A1A /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
 		495FC8BB1A12CA9900674A1A /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
-		495FC8BD1A12E97600674A1A /* AddCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCharacterViewController.h; sourceTree = "<group>"; };
-		495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCharacterViewController.m; sourceTree = "<group>"; };
 		495FC8C31A12F70E00674A1A /* LostCharacterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostCharacterTableViewCell.h; sourceTree = "<group>"; };
 		495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostCharacterTableViewCell.m; sourceTree = "<group>"; };
 		49D44EC41A16F07F0026B9D8 /* CharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterViewController.h; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 				495FC88F1A12B19700674A1A /* RootViewController.m */,
 				49D44EC41A16F07F0026B9D8 /* CharacterViewController.h */,
 				49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */,
-				495FC8BD1A12E97600674A1A /* AddCharacterViewController.h */,
-				495FC8BE1A12E97600674A1A /* AddCharacterViewController.m */,
 				495FC8911A12B19700674A1A /* Main.storyboard */,
 				495FC8941A12B19700674A1A /* Images.xcassets */,
 				495FC8961A12B19700674A1A /* LaunchScreen.xib */,
@@ -267,7 +262,6 @@
 				495FC8871A12B19700674A1A /* main.m in Sources */,
 				495FC8B91A12C81200674A1A /* Plist.m in Sources */,
 				49D44EC61A16F07F0026B9D8 /* CharacterViewController.m in Sources */,
-				495FC8BF1A12E97600674A1A /* AddCharacterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

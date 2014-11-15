@@ -11,7 +11,7 @@
 #import "Plist.h"
 #import "CoreData.h"
 #import "LostCharacterTableViewCell.h"
-#import "AddCharacterViewController.h"
+#import "CharacterViewController.h"
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -168,6 +168,7 @@
                                                                       byGenderString:textFieldForGender.text
                                                                          byAgeString:textFieldForAge.text
                                                                       byOriginString:textFieldForOrigin.text];
+
                                    self.lostCharactersArray = [coreDataManager retrieveLostCharacters];
                                    [self.tableView reloadData];
                                }];
@@ -210,14 +211,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    
-//    if ([segue.identifier isEqualToString:@"Segue"])
-//    {
-//        AddCharacterViewController *acvc = segue.destinationViewController;
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-//        NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
-//        acvc.lostCharacter = lostCharacter;
-//    }
+
+    CharacterViewController *cvc = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
+    cvc.lostCharacter = lostCharacter;
+
 }
 
 @end
