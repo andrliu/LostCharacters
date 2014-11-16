@@ -21,6 +21,7 @@
 		495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 495FC8C41A12F70E00674A1A /* LostCharacterTableViewCell.m */; };
 		49D44EC61A16F07F0026B9D8 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */; };
 		49EBCC8C1A17F26B0019582E /* RelationshipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBCC8B1A17F26B0019582E /* RelationshipViewController.m */; };
+		49EBCC8F1A180EA30019582E /* Lost.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EBCC8E1A180EA30019582E /* Lost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		49D44EC51A16F07F0026B9D8 /* CharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterViewController.m; sourceTree = "<group>"; };
 		49EBCC8A1A17F26B0019582E /* RelationshipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationshipViewController.h; sourceTree = "<group>"; };
 		49EBCC8B1A17F26B0019582E /* RelationshipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipViewController.m; sourceTree = "<group>"; };
+		49EBCC8D1A180EA30019582E /* Lost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lost.h; sourceTree = "<group>"; };
+		49EBCC8E1A180EA30019582E /* Lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 		495FC8B41A12BFA100674A1A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49EBCC8D1A180EA30019582E /* Lost.h */,
+				49EBCC8E1A180EA30019582E /* Lost.m */,
 				495FC8BA1A12CA9900674A1A /* CoreData.h */,
 				495FC8BB1A12CA9900674A1A /* CoreData.m */,
 				495FC8B71A12C81200674A1A /* Plist.h */,
@@ -264,6 +269,7 @@
 				495FC8C51A12F70E00674A1A /* LostCharacterTableViewCell.m in Sources */,
 				495FC88A1A12B19700674A1A /* AppDelegate.m in Sources */,
 				495FC8BC1A12CA9900674A1A /* CoreData.m in Sources */,
+				49EBCC8F1A180EA30019582E /* Lost.m in Sources */,
 				495FC8901A12B19700674A1A /* RootViewController.m in Sources */,
 				495FC8871A12B19700674A1A /* main.m in Sources */,
 				495FC8B91A12C81200674A1A /* Plist.m in Sources */,

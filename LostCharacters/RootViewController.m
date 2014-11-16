@@ -13,6 +13,7 @@
 #import "LostCharacterTableViewCell.h"
 #import "CharacterViewController.h"
 #import "RelationshipViewController.h"
+#import "Lost.h"    
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -185,12 +186,6 @@
     return @"SMOKE\nMONSTER";
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
-
 //MARK: tableview delegate protocol
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -202,14 +197,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
+    Lost *lostCharacter = self.lostCharactersArray[indexPath.row];
     LostCharacterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.actorLabel.text = [NSString stringWithFormat:@"Actor:\n%@",[lostCharacter valueForKey:@"actor"]];
-    cell.passengerLabel.text = [NSString stringWithFormat:@"Passenger:\n%@",[lostCharacter valueForKey:@"passenger"]];
-    cell.genderLabel.text = [NSString stringWithFormat:@"Gender:\n%@",[lostCharacter valueForKey:@"gender"]];
-    cell.ageLabel.text = [NSString stringWithFormat:@"Age:\n%@",[lostCharacter valueForKey:@"age"]];
-    cell.originLabel.text = [NSString stringWithFormat:@"Origin:\n%@",[lostCharacter valueForKey:@"origin"]];
-    cell.actorImageView.image = [[UIImage alloc]initWithData:[lostCharacter valueForKey:@"photo"]];
+    cell.actorLabel.text = [NSString stringWithFormat:@"Actor:\n%@",lostCharacter.actor];
+    cell.passengerLabel.text = [NSString stringWithFormat:@"Passenger:\n%@",lostCharacter.passenger];
+    cell.genderLabel.text = [NSString stringWithFormat:@"Gender:\n%@",lostCharacter.gender];
+    cell.ageLabel.text = [NSString stringWithFormat:@"Age:\n%@",lostCharacter.age];
+    cell.originLabel.text = [NSString stringWithFormat:@"Origin:\n%@",lostCharacter.origin];
+    cell.actorImageView.image = [[UIImage alloc]initWithData:lostCharacter.photo];
 
     return cell;
 }
@@ -217,22 +212,22 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString: @"RelationSegue"])
-    {
-        RelationshipViewController *rvc = segue.destinationViewController;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
-        rvc.lostCharacter = lostCharacter;
-        rvc.lostCharactersArray = self.lostCharactersArray;
-        
-    }
-    else
-    {
+//    if ([segue.identifier isEqualToString: @"RelationSegue"])
+//    {
+//        RelationshipViewController *rvc = segue.destinationViewController;
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        Lost *lostCharacter = self.lostCharactersArray[indexPath.row];
+//        rvc.lostCharacter = lostCharacter;
+//        rvc.lostCharactersArray = self.lostCharactersArray;
+//        
+//    }
+//    else if  ([segue.identifier isEqualToString: @"EditSegue"])
+//    {
         CharacterViewController *cvc = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        NSManagedObject *lostCharacter = self.lostCharactersArray[indexPath.row];
+        Lost *lostCharacter = self.lostCharactersArray[indexPath.row];
         cvc.lostCharacter = lostCharacter;
-    }
+//    }
 
 }
 

@@ -7,7 +7,8 @@
 //
 
 #import "RelationshipViewController.h"
-
+#import "AppDelegate.h"
+#import "CoreData.h"
 
 @interface RelationshipViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -27,10 +28,24 @@
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     self.moc = delegate.managedObjectContext;
 
-    self.relationArray = self.lostCharactersArray;
+    CoreData *coreDataManager = [[CoreData alloc]initWithMOC:self.moc];
+    NSMutableArray *lostCharactersArray = [coreDataManager retrieveLostCharacters];
+
+    self.relationArray = lostCharactersArray;
     [self.relationArray removeObject:self.lostCharacter];
-    
+
     [self.relationTableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Lost *lostCharacter = self.relationArray[indexPath.row];
+
+    self.lostCharacter.lover = lostCharacter;
+
+    [self.moc save:nil];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,6 +60,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"Actor: %@",[lostCharacter valueForKey:@"actor"]];
+
+    if ([self.lostCharacter.lover isEqual:lostCharacter])
+    {
+        cell.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.3];
+    }
+    else
+    {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+
     return cell;
 }
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "Lost.h"
 
 @interface CharacterViewController : UIViewController
 
-@property NSManagedObject *lostCharacter;
+@property Lost *lostCharacter;
 
 @end

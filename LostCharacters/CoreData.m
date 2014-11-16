@@ -7,7 +7,7 @@
 //
 
 #import "CoreData.h"
-
+#import "Lost.h"
 @implementation CoreData
 
 - (instancetype)initWithMOC:(NSManagedObjectContext*)moc
@@ -44,7 +44,6 @@
 - (void)removeLostCharactersInCoreDataWithArray:(NSMutableArray *)lostCharactersArray forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *lostCharacter = [lostCharactersArray objectAtIndex:indexPath.row];
-    
     [self.moc deleteObject:lostCharacter];
     [lostCharactersArray removeObjectAtIndex:indexPath.row];
     [self.moc save:nil];
@@ -79,25 +78,24 @@
 {
     for (NSDictionary *lostCharacterDictionary in lostCharactersArray)
     {
-        NSManagedObject *lostCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"Lost" inManagedObjectContext:self.moc];
-        [lostCharacter setValue:lostCharacterDictionary[@"actor"] forKey:@"actor"];
-        [lostCharacter setValue:lostCharacterDictionary[@"passenger"] forKey:@"passenger"];
-        [lostCharacter setValue:lostCharacterDictionary[@"gender"] forKey:@"gender"];
-        [lostCharacter setValue:lostCharacterDictionary[@"age"] forKey:@"age"];
-        [lostCharacter setValue:lostCharacterDictionary[@"origin"] forKey:@"origin"];
-
+        Lost *lostCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"Lost" inManagedObjectContext:self.moc];
+        lostCharacter.actor = lostCharacterDictionary[@"actor"];
+        lostCharacter.passenger = lostCharacterDictionary[@"passenger"];
+        lostCharacter.gender = lostCharacterDictionary[@"gender"];
+        lostCharacter.age = lostCharacterDictionary[@"age"];
+        lostCharacter.origin = lostCharacterDictionary[@"origin"];
     }
     [self.moc save:nil];
 }
 
 - (void)storeLostCharactersByActorString:(NSString *)actorString byPassengerString:(NSString *)passengerString byGenderString:(NSString *)genderString byAgeString:(NSString *)ageString byOriginString:(NSString *)originString
 {
-    NSManagedObject *lostCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"Lost" inManagedObjectContext:self.moc];
-    [lostCharacter setValue:actorString forKey:@"actor"];
-    [lostCharacter setValue:passengerString forKey:@"passenger"];
-    [lostCharacter setValue:genderString forKey:@"gender"];
-    [lostCharacter setValue:ageString forKey:@"age"];
-    [lostCharacter setValue:originString forKey:@"origin"];
+    Lost *lostCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"Lost" inManagedObjectContext:self.moc];
+    lostCharacter.actor = actorString;
+    lostCharacter.passenger = passengerString;
+    lostCharacter.gender = genderString;
+    lostCharacter.age = ageString;
+    lostCharacter.origin = originString;
     [self.moc save:nil];
 }
 

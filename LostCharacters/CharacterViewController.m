@@ -7,10 +7,13 @@
 //
 
 #import "CharacterViewController.h"
+#import "RelationshipViewController.h"
 #import "CoreData.h"
+#import "AppDelegate.h"
 
 @interface CharacterViewController ()<UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *relationButton;
 @property (weak, nonatomic) IBOutlet UITextField *actorTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passengerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
@@ -30,13 +33,26 @@
 
     AppDelegate *delegate = [[UIApplication sharedApplication]delegate];
     self.moc = delegate.managedObjectContext;
-    
-    self.actorTextField.text = [self.lostCharacter valueForKey:@"actor"];
-    self.passengerTextField.text = [self.lostCharacter valueForKey:@"passenger"];
-    self.genderTextField.text = [self.lostCharacter valueForKey:@"gender"];
-    self.ageTextField.text = [self.lostCharacter valueForKey:@"age"];
-    self.originTextField.text = [self.lostCharacter valueForKey:@"origin"];
-    UIImage *photoImage = [[UIImage alloc]initWithData:[self.lostCharacter valueForKey:@"photo"]];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.actorTextField.text = self.lostCharacter.actor;
+    self.passengerTextField.text = self.lostCharacter.passenger;
+    self.genderTextField.text = self.lostCharacter.gender;
+    self.ageTextField.text = self.lostCharacter.age;
+    self.originTextField.text = self.lostCharacter.origin;
+    if (self.lostCharacter.lover)
+    {
+        self.relationButton.titleLabel.text = [NSString stringWithFormat:@"%@", self.lostCharacter.lover.actor];
+    }
+    else
+    {
+        self.relationButton.titleLabel.text = @"Relationship";
+    }
+    UIImage *photoImage = [[UIImage alloc]initWithData:self.lostCharacter.photo];
     self.photoImageView.image = photoImage;
 }
 
@@ -69,18 +85,26 @@
     UIImage *pickerImage = info[UIImagePickerControllerEditedImage];
     self.photoImageView.image = pickerImage;
     NSData *profileImageData = UIImagePNGRepresentation(pickerImage);
-    [self.lostCharacter setValue:profileImageData forKey:@"photo"];
+    self.lostCharacter.photo = profileImageData;
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+    RelationshipViewController *rvc = segue.destinationViewController;
+    rvc.lostCharacter = self.lostCharacter;
+    
 }
 
 - (IBAction)confirmOnButtonPressed:(UIButton *)sender
 {
  
-    [self.lostCharacter setValue:self.actorTextField.text forKey:@"actor"];
-    [self.lostCharacter setValue:self.passengerTextField.text forKey:@"passenger"];
-    [self.lostCharacter setValue:self.ageTextField.text forKey:@"age"];
-    [self.lostCharacter setValue:self.genderTextField.text forKey:@"gender"];
-    [self.lostCharacter setValue:self.originTextField.text forKey:@"origin"];
+    self.lostCharacter.actor = self.actorTextField.text;
+    self.lostCharacter.passenger = self.passengerTextField.text;
+    self.lostCharacter.age = self.ageTextField.text;
+    self.lostCharacter.gender = self.genderTextField.text;
+    self.lostCharacter.origin = self.originTextField.text;
     [self.moc save:nil];
     
     [self dismissViewControllerAnimated:YES completion:nil];

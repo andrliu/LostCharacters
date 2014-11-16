@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "Lost.h"
 
 @interface RelationshipViewController : UIViewController
 
 @property NSMutableArray *lostCharactersArray;
-@property NSManagedObject *lostCharacter;
+@property Lost *lostCharacter;
 
 @end
